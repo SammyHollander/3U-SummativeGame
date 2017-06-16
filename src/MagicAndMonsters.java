@@ -18,7 +18,7 @@ import java.util.ArrayList;
  *
  * @author holls9719
  */
-public class Test extends JComponent {
+public class MagicAndMonsters extends JComponent {
     //new class for the attributes that will change depending on the level of monster
 
     public class monsterAtrib {
@@ -53,7 +53,7 @@ public class Test extends JComponent {
     //hole the mosters come from
     Rectangle hole = new Rectangle(WIDTH / 2 - 50, HEIGHT / 2 - 50, 100, 100);
     //new list for monsters
-    List<Test.monsterAtrib> mobs = new ArrayList<Test.monsterAtrib>();
+    List<MagicAndMonsters.monsterAtrib> mobs = new ArrayList<MagicAndMonsters.monsterAtrib>();
     //hero character
     Rectangle hero = new Rectangle(0, 0, 20, 20);
     //rectangle for the arrow
@@ -95,10 +95,10 @@ public class Test extends JComponent {
     // GAME VARIABLES END HERE   
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
-    public Test() {
+    public MagicAndMonsters() {
         //initialize the monster atributes
         for (int i = 0; i < 10; i++) {
-            Test.monsterAtrib mon = new Test.monsterAtrib(WIDTH / 2, HEIGHT / 2, 15, 15, 3 + i, 3 + i);
+            MagicAndMonsters.monsterAtrib mon = new MagicAndMonsters.monsterAtrib(WIDTH / 2, HEIGHT / 2, 15, 15, 3 + i, 3 + i);
             //adding new monster to the list
             mobs.add(mon);
         }
@@ -120,8 +120,8 @@ public class Test extends JComponent {
         frame.setVisible(true);
 
         // add listeners for keyboard and mouse
-        frame.addKeyListener(new Test.Keyboard());
-        Test.Mouse m = new Test.Mouse();
+        frame.addKeyListener(new MagicAndMonsters.Keyboard());
+        MagicAndMonsters.Mouse m = new MagicAndMonsters.Mouse();
 
         this.addMouseMotionListener(m);
         this.addMouseWheelListener(m);
@@ -485,7 +485,7 @@ public class Test extends JComponent {
      */
     public static void main(String[] args) {
         // creates an instance of my game
-        Test game = new Test();
+        MagicAndMonsters game = new MagicAndMonsters();
         // starts the game loop
         game.run();
     }
